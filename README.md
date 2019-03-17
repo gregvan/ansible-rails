@@ -27,12 +27,13 @@ This project is an Ansible playbook for provisioning and deploying a Rails/MySQL
 
 ## Before Provisioning
 
-This recipe has been adapted to be used with Linode
+This Ansible recipe has been adapted to be used with Linode.com Ubuntu slices as opposed to the upstream ASCII cast example is set up to work with Digital Ocean
 to make it work ..
-  1. Note the added base_installs
-  2. Set up ssh-copy-id then 
-  $ ssh-copy-id root@your-IP-address
-  $ ssh root@your-IP-address to prove it worked
+  1. Note the role: "base_installs" this is where i put any missing apt-get packages
+  2. Set up ssh-copy-id  
+  then    
+  $ ssh-copy-id root@your-IP-address  
+  $ ssh root@your-IP-address to prove you can ssh in to your target server without needing to authenticate  
 
 ## Provisioning
 
