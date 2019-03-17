@@ -13,7 +13,7 @@ This project is an Ansible playbook for provisioning and deploying a Rails/MySQL
 1. From your Rails application folder run:
    
     ```shell
-    \curl -sSL https://raw.githubusercontent.com/bradymholt/ansible-rails/master/installer.sh | bash
+    \curl -sSL https://raw.githubusercontent.com/gregvan/ansible-rails/master/installer.sh | bash
     ```
  
    which will:

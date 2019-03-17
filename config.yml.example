@@ -2,12 +2,12 @@ all:
   vars:
     # The following vars apply globally; additional config is in group_vars/all.
     app_name: my-app            # name of application
-    deploy_user: bholt          # name of the remote user account for provisioning and deployment
-    gh_pubkey_user: bradymholt  # the Public key for this GitHub user will be added to authorized_keys for deploy_user
+    deploy_user: zoltar          # name of the remote user account for provisioning and deployment
+    gh_pubkey_user: zoltar767768575  # the Public key for this GitHub user will be added to authorized_keys for deploy_user
     ruby_version: ruby-2.4.3    # version of Ruby
 production:
   hosts:
-    159.65.171.101              # The hostname or IP address of the remote server
+    000.000.000.000              # The hostname or IP address of the remote server
   vars:
     webserver_name: demo.geekytidbits.com  # Virtual server name for Nginx config 
     use_ssl: true               # If true, SSL cert will be obtained from Let's Encrypt and Nginx provisioned for SSL

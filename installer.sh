@@ -6,7 +6,7 @@ if [[ ! -f config.ru ]] ; then
 fi
 
 # Clone ansible-rails into a folder called ops/
-git clone https://github.com/bradymholt/ansible-rails.git ops && \
+git clone https://github.com/gregvan/ansible-rails.git ops && \
 
 # Remove the installer file because it is not needed
 rm ./ops/installer.sh

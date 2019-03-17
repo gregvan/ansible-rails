@@ -4,6 +4,8 @@ RUN apt-get update && \
     apt-get install -y \
 			curl \
 			python \
+			apt-transport-https \
+			uuid-runtime \
 			sudo \
 		&& rm -rf /var/lib/apt/lists/*
 

@@ -5,6 +5,8 @@ RUN apt-get update && \
 			curl \
 			gpg \
 			python \
+			apt-transport-https \
+			uuid-runtime \
 			sudo \
 			systemd \
 		&& rm -rf /var/lib/apt/lists/*

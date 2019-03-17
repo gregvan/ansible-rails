@@ -1,0 +1,6 @@
+- name: install
+  apt: name=apt-transport-https state=present
+
+- name: install
+  apt: name=uuid-runtime state=present
+  
