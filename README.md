@@ -25,6 +25,15 @@ This project is an Ansible playbook for provisioning and deploying a Rails/MySQL
    If you would prefer, you can run the commands in this file manually.
 1. Edit the `ops/config.yml` file and add your project configuration
 
+## Before Provisioning
+
+This recipe has been adapted to be used with Linode
+to make it work ..
+  1. Note the added base_installs
+  2. Set up ssh-copy-id then 
+  $ ssh-copy-id root@your-IP-address
+  $ ssh root@your-IP-address to prove it worked
+
 ## Provisioning
 
 Provisioning is used to to setup the the server and initially deploy the application.
