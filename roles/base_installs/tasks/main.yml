@@ -4,3 +4,5 @@
 - name: install uuid-runtime
   apt: name=uuid-runtime state=present
   
+- name: install gnupg2
+  apt: name=gnupg2 state=present
