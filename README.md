@@ -27,13 +27,10 @@ This project is an Ansible playbook for provisioning and deploying a Rails/MySQL
 
 ## Before Provisioning
 
-This Ansible recipe has been adapted to be used with Linode.com Ubuntu slices as opposed to the upstream ASCII cast example is set up to work with Digital Ocean
+This Ansible recipe has been adapted to be used with any generic Ubuntu server.
 to make it work ..
-  1. Note the role: "base_installs" this is where i put any missing apt-get packages
-  2. Set up ssh-copy-id  
-  then    
-  $ ssh-copy-id root@your-IP-address  
-  $ ssh root@your-IP-address to prove you can ssh in to your target server without needing to authenticate  
+  1. Note the role: "base_installs" this is where i put any missing Ubuntu packages
+  2. Use ssh-copy-id to copy over your credetials to the remote server befor you run 'provision rake'
 
 ## Provisioning
 
@@ -46,7 +43,7 @@ To provision your server, run: `rake provision`.  This will do the following:
   - Nginx
   - Phusion passenger
   - MySQL
-  - Libraries: libxslt-dev, libxml2-dev, libmysqlclient-dev, imagemagick
+  - Libraries: libxslt-dev, libxml2-dev, libmysqlclient-dev, imagemagick, gnupg2, uuid-runtime, apt-transport-https
 - Create a user with ssh access and sudo authorization
 - Setup a daily backup job to backup MySQL database to S3
 - Create an app directory with appropriate permissions where Nginx config is pointing to
