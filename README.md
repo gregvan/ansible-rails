@@ -49,6 +49,8 @@ To provision your server, run: `rake provision`.  This will do the following:
   - Precompile assets locally with `rake assets:precompile`.
   - BUT then unlike the upstream ansible-rails.. leave the rest up to Capistrano 3 as a typical 'cap production deploy'. It is slower for initial deploy for sure! but you make it back with subsequent deployments IMHO.
 
-## Deploying
+## Deploying (for future consideration)
 
-If you have already provisioned your server and want to redeploy changes to your Rails app, run `rake deploy`.  This will only run the deploy tasks from the playbook and be much faster.
+I plan to add both options
+  - use ansible-rails rSync => If you have already provisioned your server and want to redeploy changes to your Rails app, run `rake deploy`.  This will only run the deploy tasks from the playbook and be much faster.
+  - use Capistrano 3 => Leave deployment up to Capistrano 3 as a typical 'cap production deploy'. It is slower for initial deploy for sure! but you make it back with subsequent deployments IMHO.
