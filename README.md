@@ -47,14 +47,7 @@ To provision your server, run: `rake provision`.  This will do the following:
 - Define an environment variable named `SECRET_KEY_BASE` with a unique uuid value.
 - Deploy the application:
   - Precompile assets locally with `rake assets:precompile`.
-  - Copy app files to to remote server in the deploy directory
-  - Update `config/database.yml` on remote server with correct production db config
-  - Run the following remotely:
-  - `bundle install`
-  - `rake db:migrate RAILS_ENV="production"`
-  - `rake tmp:clear`
-  - `rake log:clear`
-  - `touch tmp/restart.txt` (restart the app)
+  - BUT then unlike the upstream ansible-rails.. leave the rest up to Capistrano 3 as a typical 'cap production deploy'. It is slower for initial deploy for sure! but you make it back with subsequent deploments IMHO.
 
 ## Deploying
 
