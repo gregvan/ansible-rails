@@ -1,25 +1,32 @@
 - name: precompile assets
   local_action: command bundle exec rake assets:precompile chdir=../
 
-- name: copy files (src is Rails root folder)
-  synchronize: src=../../../../ dest={{ deploy_directory }} delete=yes rsync_opts=--exclude=.git/,--exclude=log/,--exclude=tmp/cache
+# I am taking the approach that deploy is left up to Capistrano 3
+# you will see that reflected here 
+# and in .. 
+# ops/group_vars/all where the path is 
+# deploy_directory: "/home/{{ deploy_user }}/apps/current" and not
+# deploy_directory: "/home/{{ deploy_user }}/apps/{{ app_name }}"
 
-- name: config database.yml
-  template: src=database.yml.j2 dest={{ deploy_directory}}/config/database.yml
+# - name: copy files (src is Rails root folder)
+#   synchronize: src=../../../../ dest={{ deploy_directory }} delete=yes rsync_opts=--exclude=.git/,--exclude=log/,--exclude=tmp/cache
 
-- name: bundle install
-  command: bash -lc bundle install chdir={{ deploy_directory }}
+# - name: config database.yml
+#   template: src=database.yml.j2 dest={{ deploy_directory}}/config/database.yml
 
-- name: migrate database
-  command: bash -lc bundle exec rake db:migrate RAILS_ENV="production" chdir={{ deploy_directory }}
+# - name: bundle install
+#   command: bash -lc bundle install chdir={{ deploy_directory }}
 
-- name: tmp clear
-  command: bash -lc bundle exec rake tmp:clear chdir={{ deploy_directory }}
+# - name: migrate database
+#   command: bash -lc bundle exec rake db:migrate RAILS_ENV="production" chdir={{ deploy_directory }}
 
-- name: log clear
-  command: bash -lc bundle exec rake log:clear chdir={{ deploy_directory }}
+# - name: tmp clear
+#   command: bash -lc bundle exec rake tmp:clear chdir={{ deploy_directory }}
 
-- name: restart app
-  file:
-    state: touch
-    path: "{{ deploy_directory }}/tmp/restart.txt"
+# - name: log clear
+#   command: bash -lc bundle exec rake log:clear chdir={{ deploy_directory }}
+
+# - name: restart app
+#   file:
+#     state: touch
+#     path: "{{ deploy_directory }}/tmp/restart.txt"

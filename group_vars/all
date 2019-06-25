@@ -1,7 +1,7 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
 
-deploy_directory: "/home/{{ deploy_user }}/apps/{{ app_name }}"
+deploy_directory: "/home/{{ deploy_user }}/apps/current"
 
 mysql_db_name: "{{ app_name }}"
 mysql_db_user: "{{ app_name }}"
