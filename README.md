@@ -47,7 +47,7 @@ To provision your server, run: `rake provision`.  This will do the following:
 - Define an environment variable named `SECRET_KEY_BASE` with a unique uuid value.
 - Deploy the application:
   - Precompile assets locally with `rake assets:precompile`.
-  - BUT then unlike the upstream ansible-rails.. leave the rest up to Capistrano 3 as a typical 'cap production deploy'. It is slower for initial deploy for sure! but you make it back with subsequent deploments IMHO.
+  - BUT then unlike the upstream ansible-rails.. leave the rest up to Capistrano 3 as a typical 'cap production deploy'. It is slower for initial deploy for sure! but you make it back with subsequent deployments IMHO.
 
 ## Deploying
 
